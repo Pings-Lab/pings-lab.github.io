@@ -29,7 +29,7 @@ const services = [
     title: "Web Development",
     description: "From landing pages to complex web applications, we build fast, secure, and scalable solutions using modern technologies.",
     features: [
-      "React & Next.js expertise",
+      "UI/UX Expertise",
       "Full-stack development",
       "API integrations",
       "Performance optimization",
@@ -46,7 +46,7 @@ const services = [
       "Cross-platform development",
       "Native performance",
       "App Store optimization",
-      "Push notifications"
+      "Long-term support"
     ],
     gradient: "from-violet-500 to-purple-500"
   }
@@ -56,7 +56,8 @@ const process = [
   { step: "01", title: "Discovery", description: "Understanding your vision and requirements" },
   { step: "02", title: "Design", description: "Creating wireframes and prototypes" },
   { step: "03", title: "Development", description: "Building with clean, maintainable code" },
-  { step: "04", title: "Delivery", description: "Testing, deployment, and ongoing support" }
+  { step: "04", title: "Delivery", description: "Testing, deployment, and ongoing support" },
+ 
 ];
 
 export default function Services() {
@@ -168,7 +169,7 @@ export default function Services() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="text-6xl font-bold text-primary/10 mb-4">{item.step}</div>
+                <div className="text-6xl font-bold text-primary/30 mb-4">{item.step}</div>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
                 

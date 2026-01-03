@@ -28,8 +28,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@pingslab.com",
-    href: "mailto:hello@pingslab.com"
+    value: "thepingslab@gmail.com",
+    href: "mailto:thepingslab@gmail.com"
   },
   {
     icon: MapPin,

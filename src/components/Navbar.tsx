@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, FlaskConical } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import pingslab from "/ping.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -25,7 +26,8 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="p-2 rounded-lg bg-gradient-primary">
-              <FlaskConical className="h-5 w-5 text-primary-foreground" />
+              <img src={pingslab} className="h-8 w-8 text-primary-foreground" />
+              
             </div>
             <span className="font-bold text-lg">
               Ping's <span className="text-gradient">Lab</span>

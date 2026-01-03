@@ -4,6 +4,7 @@ import { Target, Lightbulb, Shield, ArrowRight, CheckCircle2 } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/Layout";
 import abstractTech from "@/assets/abstract-tech-1.jpg";
+import pingslab from "/pingslab.svg";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -110,15 +111,15 @@ export default function About() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-card">
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-card flex items-center justify-center">
                 <img 
-                  src={abstractTech} 
+                  src={pingslab} 
                   alt="Innovation at Ping's Lab" 
-                  className="w-full h-full object-cover"
+                  className="w-cover h-cover object-cover rounded-2xl"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-4 shadow-card">
-                <div className="text-2xl font-bold text-gradient">5+ Years</div>
+              <div className="absolute -bottom-6 -left-17 bg-card border border-border rounded-xl p-4 shadow-card">
+                <div className="text-2xl font-bold text-gradient">2+ Years</div>
                 <div className="text-sm text-muted-foreground">of Innovation</div>
               </div>
             </motion.div>

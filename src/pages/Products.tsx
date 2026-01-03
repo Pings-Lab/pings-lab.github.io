@@ -18,26 +18,26 @@ const fadeInUp = {
 
 const products = [
   {
-    name: "CodeFlow",
-    description: "AI-powered code review and collaboration platform. Streamline your development workflow with intelligent suggestions and automated quality checks.",
+    name: "Ping's LMS",
+    description: "Learning management system for educational institutions. Simplify course management, student tracking, and online learning experience.",
     image: abstractTech1,
     gradient: "from-cyan-500 to-blue-500"
   },
   {
-    name: "DataSync Pro",
-    description: "Real-time data synchronization across all your applications. Connect, transform, and sync data seamlessly with enterprise-grade reliability.",
+    name: "Stunning Resume",
+    description: "Create a stunning resume in minutes. Customize your skills, experience, and achievements to highlight your professional profile.",
     image: abstractTech2,
     gradient: "from-violet-500 to-purple-500"
   },
   {
-    name: "DeployKit",
-    description: "One-click deployment for modern web applications. From local development to production in seconds, with built-in monitoring and rollback.",
+    name: "Portfolio Fox",
+    description: "Personal portfolio website for freelancers and entrepreneurs. Showcase your work, skills, and contact details for potential clients and collaborators.",
     image: abstractTech3,
     gradient: "from-pink-500 to-rose-500"
   },
   {
-    name: "InsightHub",
-    description: "Analytics dashboard for data-driven decisions. Visualize your metrics, track KPIs, and generate actionable insights automatically.",
+    name: "Web Helm",
+    description: "Dashboard for web developers. Manage database connections, CI/CD pipelines, and monitoring tools for efficient project management.",
     image: abstractTech4,
     gradient: "from-amber-500 to-orange-500"
   }
@@ -152,17 +152,17 @@ export default function Products() {
             </h2>
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div>
-                <div className="text-4xl font-bold text-gradient mb-2">🚀</div>
+                <div className="text-4xl font-bold mb-2">🚀</div>
                 <h3 className="font-semibold mb-2">Early Access</h3>
                 <p className="text-sm text-muted-foreground">Be the first to try our products before public launch</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gradient mb-2">💰</div>
+                <div className="text-4xl font-bold mb-2">💰</div>
                 <h3 className="font-semibold mb-2">Founder Pricing</h3>
                 <p className="text-sm text-muted-foreground">Exclusive discounts for early supporters</p>
               </div>
               <div>
-                <div className="text-4xl font-bold text-gradient mb-2">🎯</div>
+                <div className="text-4xl font-bold  mb-2">🎯</div>
                 <h3 className="font-semibold mb-2">Shape the Product</h3>
                 <p className="text-sm text-muted-foreground">Your feedback directly influences development</p>
               </div>

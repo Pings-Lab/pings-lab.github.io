@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { FlaskConical, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import {  Github, Linkedin, Youtube, Mail } from "lucide-react";
+import pingslab from "/ping.png";
 
 const footerLinks = {
   company: [
@@ -18,10 +19,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:hello@pingslab.com", label: "Email" },
+  { icon: Github, href: "https://github.com/Pings-Lab", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/pings-lab", label: "LinkedIn" },
+  { icon: Youtube, href: "https://youtube.com/@pingslab", label: "Twitter" },
+  { icon: Mail, href: "mailto:thepingslab@gmail.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -33,7 +34,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="p-2 rounded-lg bg-gradient-primary">
-                <FlaskConical className="h-5 w-5 text-primary-foreground" />
+                <img src={pingslab} className="h-8 w-8 text-primary-foreground" />
               </div>
               <span className="font-bold text-lg">
                 Ping's <span className="text-gradient">Lab</span>
