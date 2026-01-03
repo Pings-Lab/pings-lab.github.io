@@ -16,7 +16,7 @@ const values = [
   {
     icon: Target,
     title: "Mission-Driven",
-    description: "Every line of code we write serves a purpose. We're focused on creating impactful solutions that make a real difference."
+    description: "Every project we build is a reflection of our mission. We're focused on creating impactful solutions that make a real difference."
   },
   {
     icon: Lightbulb,
