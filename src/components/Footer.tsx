@@ -33,7 +33,8 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="p-2 rounded-lg bg-gradient-primary">
+              {/* <div className="p-2 rounded-lg bg-gradient-primary"> */}
+              <div className=" rounded-lg ">
                 <img src={pingslab} className="h-8 w-8 text-primary-foreground" />
               </div>
               <span className="font-bold text-lg">

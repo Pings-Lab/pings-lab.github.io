@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Layout } from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 
+const apiUrl = import.meta.env.VITE_CONT_CONN;
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -49,39 +50,52 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    projectType: "",
-    message: ""
+    Name: "",
+    Email: "",
+    Type: "",
+    Message: ""
   });
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.projectType || !formData.message) {
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  // 1. Start loading state
+  setIsSubmitting(true);
+  
+  const { Name, Email, Type, Message } = formData;
+  const url = apiUrl;
+
+  fetch(url, {
+    method: "POST",
+    mode: "no-cors", // Required for Google Scripts to bypass CORS
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `Name=${encodeURIComponent(Name)}&Email=${encodeURIComponent(Email)}&Type=${encodeURIComponent(Type)}&Message=${encodeURIComponent(Message)}`
+  })
+    .then(() => {
+      // 2. Success Logic: ONLY happens after the request finishes
       toast({
-        title: "Missing Fields",
-        description: "Please fill in all required fields.",
+        title: "Message Sent! 🎉",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      setIsSubmitted(true);
+      setFormData({ Name: "", Email: "", Type: "", Message: "" });
+    })
+    .catch((error) => {
+      // 3. Error Logic
+      toast({
+        title: "Message Failed!",
+        description: "Something went wrong. Please try again.",
         variant: "destructive"
       });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Message Sent! 🎉",
-      description: "We'll get back to you within 24 hours."
+      console.error(error);
+    })
+    .finally(() => {
+      // 4. Always turn off the spinner regardless of success or failure
+      setIsSubmitting(false);
     });
-  };
-
+};
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -186,7 +200,7 @@ export default function Contact() {
                     <Button 
                       onClick={() => {
                         setIsSubmitted(false);
-                        setFormData({ name: "", email: "", projectType: "", message: "" });
+                        setFormData({ Name: "", Email: "", Type: "", Message: "" });
                       }}
                       variant="outline"
                     >
@@ -201,9 +215,11 @@ export default function Contact() {
                       <Label htmlFor="name">Name *</Label>
                       <Input
                         id="name"
+                        type="text"
+                        name="Name"
                         placeholder="John Doe"
-                        value={formData.name}
-                        onChange={(e) => handleChange("name", e.target.value)}
+                        value={formData.Name}
+                        onChange={(e) => handleChange("Name", e.target.value)}
                         className="h-12"
                         required
                       />
@@ -213,9 +229,10 @@ export default function Contact() {
                       <Input
                         id="email"
                         type="email"
+                        name="Email"
                         placeholder="john@example.com"
-                        value={formData.email}
-                        onChange={(e) => handleChange("email", e.target.value)}
+                        value={formData.Email}
+                        onChange={(e) => handleChange("Email", e.target.value)}
                         className="h-12"
                         required
                       />
@@ -225,8 +242,9 @@ export default function Contact() {
                   <div className="space-y-2">
                     <Label htmlFor="projectType">Project Type *</Label>
                     <Select
-                      value={formData.projectType}
-                      onValueChange={(value) => handleChange("projectType", value)}
+                      name="Type"
+                      value={formData.Type}
+                      onValueChange={(value) => handleChange("Type", value)}
                     >
                       <SelectTrigger className="h-12">
                         <SelectValue placeholder="Select a project type" />
@@ -245,9 +263,10 @@ export default function Contact() {
                     <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
+                      name="Message"
                       placeholder="Tell us about your project..."
-                      value={formData.message}
-                      onChange={(e) => handleChange("message", e.target.value)}
+                      value={formData.Message}
+                      onChange={(e) => handleChange("Message", e.target.value)}
                       className="min-h-[160px] resize-none"
                       required
                     />

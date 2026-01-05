@@ -25,7 +25,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-gradient-primary">
+            <div className="p-0 rounded-lg ">
               <img src={pingslab} className="h-8 w-8 text-primary-foreground" />
               
             </div>

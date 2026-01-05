@@ -43,10 +43,10 @@ const philosophyItems = [
 ];
 
 const stats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: "27+", label: "Projects Delivered" },
+  { value: "100%", label: "Client Satisfaction" },
   { value: "24/7", label: "Support Available" },
-  { value: "5+", label: "Years Experience" }
+  { value: "2+", label: "Years Experience" }
 ];
 
 export default function Index() {
