@@ -74,38 +74,60 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
+     <AnimatePresence>
+  {isOpen && (
+    <motion.div
+      // We use opacity for the backdrop, but keep height simple
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="md:hidden glass-strong border-t border-border overflow-hidden"
+    >
+      <motion.div 
+        // This container handles the "Slide Down" effect
+        initial={{ y: -20 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="container mx-auto px-4 py-6 space-y-2"
+      >
+        {navLinks.map((link, i) => (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-strong border-t border-border"
+            key={link.path}
+            // Staggering the links makes it feel faster and smoother
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.05 }}
           >
-            <div className="container mx-auto px-4 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <Button className="w-full mt-4 bg-gradient-primary text-primary-foreground">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
+            <Link
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                location.pathname === link.path
+                  ? "bg-primary/10 text-primary"
+                  : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              }`}
+            >
+              {link.name}
+            </Link>
           </motion.div>
-        )}
-      </AnimatePresence>
+        ))}
+        
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: navLinks.length * 0.05 }}
+        >
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
+            <Button className="w-full mt-4 bg-gradient-primary text-primary-foreground">
+              Get Started
+            </Button>
+          </Link>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 }
