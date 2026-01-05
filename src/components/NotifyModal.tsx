@@ -4,7 +4,7 @@ import { X, Bell, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-
+const apiUrl = import.meta.env.VITE_CONT_CONN;
 interface NotifyModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -16,24 +16,46 @@ export function NotifyModal({ isOpen, onClose, productName }: NotifyModalProps) 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  // 1. Start loading state
+  setIsSubmitting(true);
+  
+  
+  const url = apiUrl;
 
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    toast({
-      title: "You're on the list! 🎉",
-      description: `We'll notify you when ${productName} launches.`,
+  fetch(url, {
+    method: "POST",
+    mode: "no-cors", // Required for Google Scripts to bypass CORS
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `Product=${encodeURIComponent(productName)}&Email=${encodeURIComponent(email)}`
+  })
+    .then(() => {
+      // 2. Success Logic: ONLY happens after the request finishes
+      toast({
+        title: "Message Sent! 🎉",
+        description: "You eill be notified when "+""+productName+" is live.",
+      });
+      
+      setIsSubmitting(true);
+      setEmail("");
+    })
+    .catch((error) => {
+      // 3. Error Logic
+      toast({
+        title: "Message Failed!",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+      console.error(error);
+    })
+    .finally(() => {
+      // 4. Always turn off the spinner regardless of success or failure
+      setIsSubmitting(false);
+      onClose();
     });
-    
-    setEmail("");
-    setIsSubmitting(false);
-    onClose();
-  };
+};
 
   return (
     <AnimatePresence>
