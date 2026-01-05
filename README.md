@@ -20,17 +20,10 @@ We are deeply committed to the **Open Source ecosystem**. We believe in the powe
 - 🔭 **Flagship Project:** Next-generation Resume Builder API.
 - ⚡ **Philosophy:** Methodical strategy followed by precise execution.
 
-### 🛠 Tech Stack & Tools
-| Category | Technologies |
-| :--- | :--- |
-| **Backend** | Python (Flask), PostgreSQL, Node.js |
-| **Frontend** | React, Tailwind CSS, TypeScript |
-| **DevOps** | Docker, Nginx, GitHub Actions |
-| **Automation** | n8n, Custom Python Scripts |
 
 ### 📬 Connect With Us
-- **Website:** [Coming Soon]
-- **LinkedIn:** [Ping's Lab Company Page](YOUR_LINKEDIN_URL)
+- **Website:** [Ping's Lab](https://pings-lab.github.io)
+- **LinkedIn:** [Ping's Lab Company Page](https://www.linkedin.com/company/pings-lab)
 - **Email:** `pingslab@gmail.com`
 
 ---
