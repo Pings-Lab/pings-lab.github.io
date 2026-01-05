@@ -11,7 +11,7 @@ import Products from "./pages/Products";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-
+import ScrollToTop from "./components/ScrollTop";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -22,6 +22,7 @@ const App = () => (
         <Sonner />
        
         <Router>
+          <ScrollToTop/>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />

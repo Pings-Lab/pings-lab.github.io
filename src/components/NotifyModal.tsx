@@ -35,7 +35,7 @@ export function NotifyModal({ isOpen, onClose, productName }: NotifyModalProps) 
       // 2. Success Logic: ONLY happens after the request finishes
       toast({
         title: "Message Sent! 🎉",
-        description: "You eill be notified when "+""+productName+" is live.",
+        description: "You will be notified when "+""+productName+" is live.",
       });
       
       setIsSubmitting(true);
