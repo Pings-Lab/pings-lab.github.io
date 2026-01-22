@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Palette, Globe, Smartphone, ArrowRight, Check } from "lucide-react";
+import { Globe, Smartphone, ArrowRight, Check, BotMessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/Layout";
 
@@ -12,15 +12,15 @@ const fadeInUp = {
 
 const services = [
   {
-    icon: Palette,
-    title: "Portfolio Design",
-    description: "Stand out with a stunning portfolio that showcases your work and personality. We create custom designs that captivate and convert.",
+    icon: BotMessageSquare,
+    title: "AI Agents and Chatbots",
+    description: "Stand out with product and service oriented chatbots. Ai agents and automation setup for business workflow.",
     features: [
-      "Custom UI/UX design",
-      "Responsive layouts",
-      "Brand-aligned aesthetics",
-      "Interactive elements",
-      "SEO optimization"
+      "Custom database training,
+      "Web and App integration",
+      "Brand-aligned chatbots",
+      "Automation setup",
+      "Long term support"
     ],
     gradient: "from-pink-500 to-rose-500"
   },
