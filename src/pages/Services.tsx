@@ -14,7 +14,7 @@ const services = [
   {
     icon: BotMessageSquare,
     title: "AI Agents and Chatbots",
-    description: "Stand out with product and service oriented chatbots. Ai agents and automation setup for business workflow.",
+    description: "Stand out with product and service oriented chatbots. AI agents and automation setup for business workflow.",
     features: [
       "Custom database training",
       "Web and App integration",
