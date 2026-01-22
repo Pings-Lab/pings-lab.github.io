@@ -12,18 +12,18 @@ const fadeInUp = {
 
 const internships = [
   {
-    title: "Frontend Development Intern",
+    title: "Web Fullstack Intern",
     icon: Code,
     description: "Work with React, TypeScript, and modern frontend technologies to build beautiful user interfaces.",
-    skills: ["React", "TypeScript", "Tailwind CSS"],
+    skills: ["MERN", "MEAN", "Tailwind CSS", "Django", "php", "springboot"],
     type: "Remote",
     duration: "3-6 months"
   },
   {
-    title: "Backend Development Intern",
+    title: "Programming and DSA",
     icon: Database,
     description: "Build scalable APIs and server-side applications using Node.js, Python, or Go.",
-    skills: ["Node.js", "PostgreSQL", "REST APIs"],
+    skills: ["C++", "Python", "Java"],
     type: "Remote",
     duration: "3-6 months"
   },
@@ -40,14 +40,6 @@ const internships = [
     icon: Smartphone,
     description: "Develop cross-platform mobile applications using React Native or Flutter.",
     skills: ["React Native", "Flutter", "Mobile UI"],
-    type: "Remote",
-    duration: "3-6 months"
-  },
-  {
-    title: "Full Stack Development Intern",
-    icon: Code,
-    description: "Work across the entire stack, from database design to frontend implementation.",
-    skills: ["React", "Node.js", "MongoDB"],
     type: "Remote",
     duration: "3-6 months"
   }
