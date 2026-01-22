@@ -55,7 +55,7 @@ const benefits = [
 ];
 
 export default function Careers() {
-  const externalApplyUrl = "https://internship.pingslab.com";
+  const externalApplyUrl = "https://forms.gle/sroCVhTueLJgpU3N6";
 
   return (
     <Layout>
