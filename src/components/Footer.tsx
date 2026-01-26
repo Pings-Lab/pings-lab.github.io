@@ -118,7 +118,7 @@ export function Footer() {
             © {new Date().getFullYear()} Ping's Lab IT Solutions. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Udyam Registration: UDYAM-XX-00-0000000
+            Startup India and MSME Registered.
           </p>
         </div>
       </div>
